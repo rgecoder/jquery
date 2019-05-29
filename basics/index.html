@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Jquery Basics</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+  <script>
+
+    $(document).ready(function () {
+      
+      var dojo = ['dojo', 'mountain view'];
+
+      console.log(dojo);
+
+
+      $('a').click(function () {
+        alert('you are now leaving the page');
+      });
+
+      $('p').hide();
+
+      //effect methods - toggle visibility property of items
+      $('#hide').click(function () {
+        $('p').hide();
+      });
+
+      $('#show').click(function () {
+        $('p').show();
+      });
+
+
+      //manipulation methods - add/change text or html to document
+      $('h3').hover(function () {
+        $('h2').text('go see the Space Needle!');
+      }, function(){$('h2').text('Seattle, Washington')});
+
+      $('.append').click(function(){
+        $('.result').append('<h4>.append adds HTML</h4>');
+      });
+
+      //css method
+      $('button').click(function(){
+        $('button').css('background-color','yellow');
+      });
+
+
+    });
+
+  </script>
+
+</head>
+
+<body>
+  <p>This is a paragraph</p>
+
+  <p>This is also a paragraph</p>
+
+  <button id='hide'>This will hide all the paragraphs</button>
+  <button id='show'>Click to show all paragraphs</button>
+  <a id='mylink' href='http://www.google.com'>go to Google!</a>
+  <h3>Mountain View, California</h3>
+  <h2>Seattle, Washington</h2>
+  <button class='append'>Click to see .append work!</button>
+  <div class='result'></div>
+
+</body>
+
+</html>
